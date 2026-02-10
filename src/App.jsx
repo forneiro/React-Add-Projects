@@ -32,12 +32,11 @@ function App() {
     });
   }
 
+  // Delete a proyect
   function handleDeleteProject(projectId) {
     setProjects((prevProjects) => {
-      const deleteProject = prevProjects.indexOf(projectId);
-      const updatedProjects = prevProjects.slice(deleteProject, 1);
-
-      return updatedProjects;
+      prevProjects = prevProjects.filter((project) => project.id !== projectId);
+      return prevProjects;
     });
   }
 

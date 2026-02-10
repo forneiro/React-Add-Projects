@@ -25,7 +25,7 @@ export default function Project({ projects, project, onDelete }) {
             {project.title}
           </h1>
           <button
-            onClick={() => onDelete(project)}
+            onClick={() => onDelete(project.id)}
             className="text-stone-700 hover:text-red-500"
           >
             Delete

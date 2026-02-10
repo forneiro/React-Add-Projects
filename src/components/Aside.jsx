@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 export default function Aside({ onSelect, onProject, projects }) {
   return (
     <aside className="w-1/3 px-8 py-16 bg-stone-900 text-stone-50 md:w-72 rounded-r-xl">
@@ -5,12 +7,7 @@ export default function Aside({ onSelect, onProject, projects }) {
         Your projects
       </h2>
       <div>
-        <button
-          onClick={() => onSelect("form")}
-          className="px-4 py-2 text-xs md:text-base rounded-md bg-stone-700 text-stone-400 hover:bg-stone-600 hover:text-stone-100"
-        >
-          + Add Project
-        </button>
+        <Button onClick={() => onSelect("form")}>+ Add Project</Button>
       </div>
       <div>
         {projects.map((project) => {
