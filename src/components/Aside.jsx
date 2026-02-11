@@ -9,19 +9,21 @@ export default function Aside({ onSelect, onProject, projects }) {
       <div>
         <Button onClick={() => onSelect("form")}>+ Add Project</Button>
       </div>
-      <div>
+      <ul className="mt-8">
         {projects.map((project) => {
           return (
-            <button
-              key={project.title}
-              onClick={() => onProject(project.id)}
-              className="w-full text-left px-2 py-1 rounded-sm my-1 hover:text-stone-200 hover:bg-stone-800"
-            >
-              {project.title}
-            </button>
+            <li key={project.id}>
+              <button
+                key={project.title}
+                onClick={() => onProject(project.id)}
+                className="w-full text-left px-2 py-1 rounded-sm my-1 hover:text-stone-200 hover:bg-stone-800"
+              >
+                {project.title}
+              </button>
+            </li>
           );
         })}
-      </div>
+      </ul>
     </aside>
   );
 }
